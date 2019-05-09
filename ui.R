@@ -13,21 +13,25 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  titlePanel("Rice Phenotypes by Region"),
+  
+  # Some helpful information
+  helpText("This application creates a boxplot that will display the difference between seed measurements between regions"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-       sliderInput("bins",
-                   "Number of bins:",
-                   min = 1,
-                   max = 50,
-                   value = 30)
-    ),
+       sliderInput("Seed Measurements",
+                   "Choose a seed measurement to display:",
+                   c("Seed.length",
+                     "Seed.width",
+                     "Seed.volume",
+                     "Seed.surface.area")
+                   )),
     
     # Show a plot of the generated distribution
     mainPanel(
-       plotOutput("distPlot")
+       plotOutput("boxPlot")
     )
   )
 ))
