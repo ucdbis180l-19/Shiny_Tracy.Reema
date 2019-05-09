@@ -16,7 +16,7 @@ shinyUI(fluidPage(
   titlePanel("Rice Seed Measurements by Region"),
   
   # Some helpful information
-  helpText("This application creates a boxplot that will display the differences between seed measurements between regions"),
+  helpText("This application creates a boxplot that will display the differences between seed measurements between regions. Please select one or more regions."),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
@@ -29,20 +29,20 @@ shinyUI(fluidPage(
                      "Seed.surface.area")
                    ),
 
-           checkboxGroupInput("Regions", 
+          checkboxGroupInput("Regions", 
                               h3 ("Group by Region"),
-                              choices = list("Africa" = 1,
-                                             "America" = 2,
-                                             "C Asia" = 3,
-                                             "E Asia" = 4,
-                                             "Europe" = 5,
-                                             "Mid East" = 6,
-                                             "Pacific" = 7,
-                                             "S Asia" = 8,
-                                             "SE Asia" = 9,
-                                             "NA" = 10),
-                              selected = 1)),
-
+                              choices = list("Africa",
+                                             "America",
+                                             "C Asia",
+                                             "E Asia" ,
+                                             "Europe",
+                                             "Mid East",
+                                             "Pacific",
+                                             "S Asia",
+                                             "SE Asia",
+                                             "NA"),
+                              selected = "Regions")),
+    
   
     
     
