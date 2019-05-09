@@ -13,15 +13,16 @@ rice <- read.csv("RiceDiversity.44K.MSU6.Phenotypes.csv")
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
-   
-  output$boxPlot <- renderPlot({
+  
+  output$Regions <- renderPrint({input$Regions}) 
+  output$violinPlot <- renderPlot({
     
     bp <- ggplot(data = rice,
                 aes_string(x="Region",
                             y = input$Seed_Measurements,
                             fill = "Region"
                            ))
-                bp + geom_boxplot()
+                bp + geom_violin()
     
 
   })

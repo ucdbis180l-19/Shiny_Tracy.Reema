@@ -27,11 +27,28 @@ shinyUI(fluidPage(
                      "Seed.width",
                      "Seed.volume",
                      "Seed.surface.area")
-                   )),
+                   ),
+
+           checkboxGroupInput("Regions", 
+                              h3 ("Group by Region"),
+                              choices = list("Africa" = 1,
+                                             "America" = 2,
+                                             "C Asia" = 3,
+                                             "E Asia" = 4,
+                                             "Europe" = 5,
+                                             "Mid East" = 6,
+                                             "Pacific" = 7,
+                                             "S Asia" = 8,
+                                             "SE Asia" = 9,
+                                             "NA" = 10),
+                              selected = 1)),
+
+  
+    
     
     # Show a plot of the generated distribution
     mainPanel(
-       plotOutput("boxPlot")
+       plotOutput("violinPlot")
     )
   )
 ))
