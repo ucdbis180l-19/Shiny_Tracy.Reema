@@ -21,7 +21,7 @@ shinyUI(fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-       sliderInput("Seed Measurements",
+       sliderInput("Seed_Measurements",
                    "Choose a seed measurement to display:",
                    c("Seed.length",
                      "Seed.width",
