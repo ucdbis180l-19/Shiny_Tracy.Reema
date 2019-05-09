@@ -9,7 +9,7 @@
 
 library(shiny)
 library(ggplot2)
-rice <- read.csv("~/RiceDiversity.44K.MSU6.Phenotypes.csv")
+rice <- read.csv("RiceDiversity.44K.MSU6.Phenotypes.csv")
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {

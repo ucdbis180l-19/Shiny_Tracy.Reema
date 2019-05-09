@@ -7,23 +7,21 @@
 #    http://shiny.rstudio.com/
 #
 
-rice <- read.csv("RiceDiversity.44K.MSU6.Phenotypes.csv")
 library(shiny)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Rice Phenotypes by Region"),
+  titlePanel("Rice Seed Measurements by Region"),
   
   # Some helpful information
-  helpText("This application creates a boxplot that will display the difference between seed measurements between regions"),
+  helpText("This application creates a boxplot that will display the differences between seed measurements between regions"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
        radioButtons("Seed_Measurements",
-       sliderInput("Seed_Measurements",
                    "Choose a seed measurement to display:",
                    c("Seed.length",
                      "Seed.width",
