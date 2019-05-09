@@ -8,19 +8,22 @@
 #
 
 library(shiny)
+library(ggplot2)
+rice <- read.csv("~/RiceDiversity.44K.MSU6.Phenotypes.csv")
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
    
-  output$distPlot <- renderPlot({
+  output$boxPlot <- renderPlot({
     
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2] 
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
+    bp <- ggplot(data = rice,
+                aes_string(x="Region",
+                            y = input$Seed_Measurements,
+                            fill = "Region"
+                           ))
+                bp + geom_boxplot()
     
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
-    
+
   })
   
 })

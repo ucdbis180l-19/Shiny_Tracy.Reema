@@ -7,6 +7,7 @@
 #    http://shiny.rstudio.com/
 #
 
+rice <- read.csv("~/RiceDiversity.44K.MSU6.Phenotypes.csv")
 library(shiny)
 
 # Define UI for application that draws a histogram
@@ -21,7 +22,7 @@ shinyUI(fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-       sliderInput("Seed Measurements",
+       radioButtons("Seed_Measurements",
                    "Choose a seed measurement to display:",
                    c("Seed.length",
                      "Seed.width",
